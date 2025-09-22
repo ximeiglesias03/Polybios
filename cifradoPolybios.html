@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrado Polybios</title>
+</head>
+<body>
+
+    <script>
+        //Montoya Iglesias Ximena 
+        //1 Definir la tabla del alfabeto
+        const tablaPolybios= {
+            "A":"11", "B":"12", "C":"13", "D":"14", "E":"15",
+            "F":"21", "G":"22", "H":"23", "I":"24", "J":"24", "K":"25",
+            "L":"31", "M":"32", "N":"33", "O":"34", "P":"35",
+            "Q":"41", "R":"42", "S":"43", "T":"44", "U":"45",
+            "V":"51", "W":"52", "X":"53", "Y":"54", "Z":"55"
+        }
+
+//2 Funcion del cifrado
+function cifrar(texto) {
+    let resultado ="";
+    texto = texto.toUpperCase();
+
+    for (let char of texto) {
+        if (char === " ")
+        {
+            resultado += " "; //Mantiene los espacios
+        }
+        else 
+        {
+        resultado += tablaPolybios[char] + " "; 
+        }
+    }
+    return resultado.trim(); //Elimina el espacio final
+
+}
+
+//Escribir el texto de ejemplo
+let mensaje = "HOLA MUNDO";
+console.log("Mensaje original: " + mensaje); 
+
+let cifrado = cifrar(mensaje);
+console.log("Mensaje  cifrado: " + cifrado);
+
+    </script>
+    
+</body>
+</html>
